@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="logo">
-      <img alt="logo" :src="logoImage" style="width: 15%" />
-      <div class="logo-text">APACHE</div>
+      <img alt="logo" :src="logoImage" style="width: 10%" />
+      <div class="logo-text">Apache Footwear Vietnam</div>
     </div>
     <LoginBanner />
     <div class="content">
@@ -53,6 +53,7 @@
   .logo {
     position: fixed;
     top: 24px;
+    gap: 4px;
     left: 22px;
     z-index: 1;
     display: inline-flex;
@@ -62,7 +63,7 @@
       margin-right: 4px;
       margin-left: 4px;
       color: var(--color-fill-1);
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 </style>

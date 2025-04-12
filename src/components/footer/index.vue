@@ -1,9 +1,10 @@
 <template>
-  <a-layout-footer class="footer">APACHE(@Version{{ versionStorage }})</a-layout-footer>
+  <a-layout-footer class="footer">APACHE - ( @Version: {{ versionStorage }} )</a-layout-footer>
 </template>
 
 <script lang="ts" setup>
-    const versionStorage = localStorage.getItem('version');
+    // const versionStorage = localStorage.getItem('version');
+    const versionStorage = '1.0.0';
 </script>
 
 <style lang="less" scoped>

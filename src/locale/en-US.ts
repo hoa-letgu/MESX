@@ -28,7 +28,7 @@ import localmouid from '@/views/mould/kanban_mould/locale/en-US';
 import localeSettings from './en-US/settings';
 
 export default {
-  'APP.Platform.Name': '万邦生产管理看板平台',
+  'APP.Platform.Name': 'APACHE FOOTWEAR VIETNAM - DASHBOARD PLATFORM',
   'menu.homePage': 'Home page',
   'menu.server.homePage': 'Dashboard-Server',
   'menu.server.workplace': 'Workplace-Server',

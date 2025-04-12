@@ -12,9 +12,9 @@
   "device": "desktop",
   "tabBar": true,
   "menuFromServer": true,
-  "pic_url": "http://10.2.1.46:801",
-  "api_url": "http://10.2.1.46:8090/api/CommonCall",
+  "pic_url": "http://10.30.3.50:8083",
+  "api_url": "http://10.30.3.50:8082/api/CommonCall",
   "serverMenu": [],
-  "CompanyCode": "apemes",
-  "CompanyName": "apemes"
+  "CompanyCode": "aphmes-800",
+  "CompanyName": "aphmes-800"
 }

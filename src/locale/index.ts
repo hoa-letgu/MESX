@@ -8,7 +8,7 @@ export const LOCALE_OPTIONS = [
   { label: 'English', value: 'en-US' },
   { label: 'Tiếng Việt', value: 'yn-VN' },
 ];
-const defaultLocale = localStorage.getItem('arco-locale') || 'zh-CN';
+const defaultLocale = localStorage.getItem('arco-locale') || 'en-US';
 
 const i18n = createI18n({
   locale: defaultLocale,

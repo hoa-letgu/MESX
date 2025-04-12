@@ -1,12 +1,32 @@
 <template>
   <div class="login-form-wrapper">
+    <!-- Change language -->
+    <div class="language-select">
+      <h2 style="font-family: 'Times New Roman', Times, serif">{{
+        $t('login.form.language')
+      }}</h2>
+      <select
+        v-model="selectedLanguage"
+        class="select-language"
+        @change="handleChangeLanguage"
+      >
+        <option
+          v-for="lang in supportedLanguages"
+          :key="lang.code"
+          :value="lang.code"
+        >
+          {{ lang.name }}
+        </option>
+      </select>
+    </div>
+
     <div class="login-form-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-error-msg">{{ errorMessage }}</div>
     <a-spin
       :loading="loading"
       tip="登陆中...(Logging in...)"
-      style="width: 100%；height:100%"
+      style="width: 100%; height: 100%"
     >
       <a-form
         ref="loginForm"
@@ -83,6 +103,17 @@
   import useLoading from '@/hooks/loading';
   import type { LoginData } from '@/api/user';
   import { Base64 } from 'js-base64';
+
+  const supportedLanguages = [
+    { code: 'yn-VN', name: 'Tiếng Việt' },
+    { code: 'en-US', name: 'English' },
+    { code: 'zh-CN', name: 'China' },
+  ];
+  const { locale } = useI18n();
+  const selectedLanguage = ref(locale.value);
+  const handleChangeLanguage = () => {
+    locale.value = selectedLanguage.value;
+  };
 
   const router = useRouter();
   const { t } = useI18n();
@@ -171,5 +202,43 @@
     &-register-btn {
       color: var(--color-text-3) !important;
     }
+  }
+
+  .language-select {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: inline-block;
+  }
+
+  .select-language {
+    appearance: none; /* Ẩn giao diện mặc định */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px 16px;
+    width: 220px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+  }
+
+  .select-language:hover {
+    border-color: #888;
+    box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.1);
+  }
+
+  .select-language:focus {
+    border-color: #0084ff;
+    box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.3);
   }
 </style>

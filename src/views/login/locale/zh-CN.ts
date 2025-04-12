@@ -4,6 +4,7 @@ export default {
   'login.form.password.errMsg': '密码不能为空',
   'login.form.login.errMsg': '登录出错，轻刷新重试',
   'login.form.login.success': '欢迎使用',
+  'login.form.logout.success': '注销成功',
   'login.form.userName.placeholder': '用户名： ',
   'login.form.password.placeholder': ' 密码：',
   'login.form.rememberPassword': '记住密码',
@@ -16,4 +17,5 @@ export default {
   'login.banner.subSlogan2': '',
   'login.banner.slogan3': '',
   'login.banner.subSlogan3': '',
+  'login.form.language': '选择语言 :'
 };
