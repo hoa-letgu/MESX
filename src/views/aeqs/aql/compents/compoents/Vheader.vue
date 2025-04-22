@@ -2,8 +2,8 @@
     <div class="contenthead">
         <div class="headLeft common">
             <img src="../../../../../assets/images/back.png" style="width: 40px;" @click="goBack" v-if="!pageIndex" />
-            <button class="gradient-button" @click="gobackMain" v-else>返回</button>
-            <p v-if="!pageIndex" style="font-size: 17px;"> 上次使用时间: {{ lastOpenTime }}</p>
+            <button class="gradient-button" @click="gobackMain" v-else>Return</button>
+            <!-- <p v-if="!pageIndex" style="font-size: 17px;"> Last used : {{ lastOpenTime }}</p> -->
         </div>
 
         <div class="headMId common">
@@ -30,7 +30,7 @@ const props = defineProps({
     titleMsg: {
         type: String,
         required: false,
-        default: 'AQL分析',
+        default: 'AQL Analysis',
     },
     changeColor: {
         type: Function as PropType<() => void>,
@@ -45,7 +45,7 @@ const props = defineProps({
 })
 
 const dateTime = ref<string>('');
-const fullText = ref<string>('全屏');
+const fullText = ref<string>('Fullscreen');
 const lastOpenTime = ref<string>('');
 const isFull = ref<boolean>(false);
 let timeId: any = 0;
@@ -73,16 +73,16 @@ function getTimes() {
     const seconds = formatNumber(now.getSeconds());
     // 星期几的中文表示
     const weekDays = [
-        '星期天',
-        '星期一',
-        '星期二',
-        '星期三',
-        '星期四',
-        '星期五',
-        '星期六',
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
     ];
     const weekDayName = weekDays[weekDay];
-    return `${year}年${month}月${day}日 ${weekDayName} ${hours}:${minutes}:${seconds}`;
+    return `${year}/${month}/${day} - ${weekDayName} ${hours}:${minutes}:${seconds}`;
 }
 
 const changepageIndex=defineEmits(['changepageIndex'])
@@ -119,10 +119,10 @@ const exitFullscreen = () => {
 const toFullOrExit = () => {
     isFull.value = !isFull.value;
     if (isFull.value) {
-        fullText.value = '取消全屏';
+        fullText.value = 'UnFullscreen';
         requestFullScreen();
     } else {
-        fullText.value = '全屏';
+        fullText.value = 'Fullscreen';
         exitFullscreen();
     }
 };
@@ -156,6 +156,7 @@ onMounted(() => {
     height: 50px;
     display: flex;
     justify-content: space-around;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
     .headMId {
         color: white;
@@ -174,11 +175,11 @@ onMounted(() => {
             display: inline-block;
             text-align: center;
             line-height: 50%;
-            width: 40px;
+            width: auto;
             height: 33px;
-            margin-left: 2px;
-            margin-top: 5px;
-            font-size: 13px;
+            margin-left: 12px;
+            margin-top: 8px;
+            font-size: 16px;
             border: 0;
             color: white;
             background-image: linear-gradient(to right, #3f51b5, #2196f3);

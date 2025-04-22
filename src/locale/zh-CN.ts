@@ -98,7 +98,6 @@ export default {
   'menu.BottomFactory.HP_Dashboard': '热压生产目视看板',
   'menu.BottomFactory.ShelfBoard': '货架看板',
   'menu.BottomFactory.FI_Dashboard': '整理目视看板',
-
   'menu.aeqs':'质量管理',
   'menu.aeqs.china_return':'中国市场退货分析',
   'menu.aeqs.aql':'AQL分析',

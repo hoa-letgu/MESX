@@ -2,7 +2,7 @@
     <div class='diaTable' :style="{ width: hiddenInput ? 0 : width }">
         <div class="inputBox" v-if="!hiddenInput">
             <a-input @focus="focus" @click="handleClick" @clear="clear" ref="inputref" :allow-clear="clearable"
-                size="large" :disabled="disabled" v-model="localValue" placeholder="请点击选择" style="width: 260px;">
+                size="large" :disabled="disabled" v-model="localValue" placeholder="Please click to select" style="width: 260px;">
                 <template #prefix>
                     <icon-drag-dot />
                 </template>
@@ -16,11 +16,11 @@
             </template>
             <template v-else>
                 <div class="search" v-if="!hiddenSearch">
-                    <a-input class="searchInput" v-model="params.KeyWord" placeholder="请输入搜索内容" allow-clear
+                    <a-input class="searchInput" v-model="params.KeyWord" placeholder="Please enter your search content" allow-clear
                         @press-enter="getTableData">
                     </a-input>
                     <a-button class="searchBtn" type="primary" @click="getTableData">
-                        搜索
+                        Search
                     </a-button>
                 </div>
             </template>

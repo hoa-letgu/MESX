@@ -25,6 +25,9 @@
 <script lang="ts" setup>
 import { GetLastOpenTime, getOptime } from '@/api/aeqs';
 import { ref, onMounted, onBeforeUnmount, PropType } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const props = defineProps({
     titleMsg: {

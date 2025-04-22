@@ -69,6 +69,9 @@ export default {
   'menu.warehouse_management.WarehouseDashboard':
     'Quản lý kho kỹ thuật số Kanban',
   'menu.warehouse_management.FaceStocDashboard': 'Mặt dưới phù hợp với cổ phiếu',
+  'menu.aeqs':'AEQS Quản lý',
+  'menu.aeqs.china_return':'Phân tích trả hàng ở Trung Quốc',
+  'menu.aeqs.aql':'Phân tích AQL',
   ...localeSettings,
   ...localeMessageBox,
   ...localeLogin,
