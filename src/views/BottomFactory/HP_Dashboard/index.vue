@@ -545,7 +545,6 @@
     queryMoldList,
     queryReportDownHot,
     queryReportDownMold,
-    
   } from '@/api/BottomFactory';
 import { Alert } from '@arco-design/web-vue';
 

@@ -133,7 +133,9 @@
                     style="height: 320px; border: 1px"
                     @click="GotoMainDetail('1', 'PODD Inspection Analysis')"
                   >
-                    <div class="headtitle commonflex">PODD Inspection Analysis</div>
+                    <div class="headtitle commonflex"
+                      >PODD Inspection Analysis</div
+                    >
                     <div class="common">
                       <dv-border-box-13
                         class="dv-border-box-12"
@@ -176,14 +178,14 @@
                         :style="[MonthYear ? commoncheck : '']"
                         @click="changeMonthYear(1)"
                       >
-                      Monthly Inspection Analysis</div
+                        Monthly Inspection Analysis</div
                       >
                       <div class="midgap"></div>
                       <div
                         :style="[!MonthYear ? commoncheck : '']"
                         @click="changeMonthYear(2)"
                       >
-                      Annual Inspection Analysis</div
+                        Annual Inspection Analysis</div
                       >
                     </div>
                     <!-- 年月度分析表 -->
@@ -281,7 +283,9 @@
                       class="midR common commontitle"
                       @click="GotoMainDetail('5', 'Shipping Country Analysis')"
                     >
-                      <div class="headtitle commonflex">Shipping Country Analysis</div>
+                      <div class="headtitle commonflex"
+                        >Shipping Country Analysis</div
+                      >
 
                       <div class="common">
                         <dv-border-box-13
@@ -365,8 +369,7 @@
                                       )
                                     : 0
                                 }}
-                                </P
-                              >
+                              </P>
                               <P>No. Order Month</P>
                             </div>
                             <div class="order-top">
@@ -378,8 +381,7 @@
                                       )
                                     : 0
                                 }}
-                                </P
-                              >
+                              </P>
                               <P>Order Month Inspected</P>
                             </div>
                           </div>
@@ -393,8 +395,7 @@
                                       )
                                     : 0
                                 }}
-                                </P
-                              >
+                              </P>
                               <P>Total Order Month</P>
                             </div>
                             <div class="order-mid">
@@ -406,8 +407,7 @@
                                       )
                                     : 0
                                 }}
-                                </P
-                              >
+                              </P>
                               <P>Total Order Month Inspected</P>
                             </div>
                           </div>
@@ -421,8 +421,7 @@
                                       )
                                     : 0
                                 }}
-                                </P
-                              >
+                              </P>
                               <P>Order Month from China</P>
                             </div>
                             <div class="order-bottom">
@@ -434,8 +433,7 @@
                                       )
                                     : 0
                                 }}
-                                </P
-                              >
+                              </P>
                               <P>Order from China Inspected</P>
                             </div>
                           </div>
@@ -464,7 +462,9 @@
                     class="rightTopBottom common commontitle"
                     @click="GotoMainDetail('7', 'Factory Inspection Analysis')"
                   >
-                    <div class="headtitle commonflex">Factory Inspection Analysis</div>
+                    <div class="headtitle commonflex"
+                      >Factory Inspection Analysis</div
+                    >
                     <div class="common">
                       <dv-border-box-13
                         class="dv-border-box-12 checkpeople"
@@ -1852,11 +1852,11 @@
     headlist.value = [];
     res.data.RetData1.dataTable.forEach((item: any, index: any) => {
       const detailItem = {
-        Seri: item.RN,
-        Destination: item.DESCOUNTRY_NAME,
+        'Seri': item.RN,
+        'Destination': item.DESCOUNTRY_NAME,
         'Total of Month': item.TOTAL_QTY,
         'Total Inspected': item.INSPECTED_QTY,
-        'Total UnInspected': item.UNINSPECTED_QTY
+        'Total UnInspected': item.UNINSPECTED_QTY,
       };
       tabledt.push(detailItem);
     });
@@ -2237,7 +2237,9 @@
       { header: 'Inspector', key: 'inspector', width: 20 },
     ];
     // 将时间字符串拼接到文件名中
-    const fileName = `PODD Inspection Analysis ${formatNowDate('yyyyMMddHHmmss')}.xlsx`;
+    const fileName = `PODD Inspection Analysis ${formatNowDate(
+      'yyyyMMddHHmmss'
+    )}.xlsx`;
     exportToExcel(Poddcolumns, PoddTableList, fileName);
   }
   // function InsertReportLog(param: any) {
