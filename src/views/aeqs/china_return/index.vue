@@ -24,19 +24,19 @@
                         >
                           <a-input
                             v-model="form.category"
-                            placeholder="请输入Category"
+                            placeholder="Please enter Category"
                           />
                         </a-form-item>
                       </a-col>
                       <a-col :span="6">
                         <a-form-item
                           field="shoesType"
-                          label="鞋型名称"
+                          label="Shoes type"
                           label-col-flex="80px"
                         >
                           <a-input
                             v-model="form.shoesType"
-                            placeholder="请输入鞋型名称"
+                            placeholder="Please enter Shoe Type"
                           />
                         </a-form-item>
                       </a-col>
@@ -46,22 +46,22 @@
                           label="ART"
                           label-col-flex="80px"
                         >
-                          <a-input v-model="form.art" placeholder="请输入ART" />
+                          <a-input v-model="form.art" placeholder="Please enter ART" />
                         </a-form-item>
                       </a-col>
                       <a-col :span="6">
                         <a-form-item
                           field="noShshoes"
-                          label="新鞋/旧鞋 "
+                          label="New/Old"
                           label-col-flex="100px"
                         >
                           <a-select
                             v-model="form.noShshoes"
-                            placeholder="请选择活动区域"
+                            placeholder="Please select"
                           >
-                            <a-option label="全部" value="全部"></a-option>
-                            <a-option label="新鞋" value="新鞋"></a-option>
-                            <a-option label="旧鞋" value="旧鞋"></a-option>
+                            <a-option label="All" value="All"></a-option>
+                            <a-option label="New" value="New"></a-option>
+                            <a-option label="Old" value="Old"></a-option>
                           </a-select>
                         </a-form-item>
                       </a-col>
@@ -70,23 +70,23 @@
                       <a-col :span="6">
                         <a-form-item
                           field="returnReason"
-                          label="主要退货原因"
+                          label="Reason return"
                           label-col-flex="100px"
                         >
                           <a-input
                             v-model="form.returnReason"
-                            placeholder="请输入主要退货原因"
+                            placeholder="Please enter reason"
                           />
                         </a-form-item>
                       </a-col>
                       <a-col :span="6">
                         <a-form-item
                           field="productDate"
-                          label="生产月份"
+                          label="Prod date"
                           label-col-flex="80px"
                         >
                           <a-month-picker
-                            placeholder="选择日期"
+                            placeholder="Please choose date"
                             v-model="form.productDate"
                             format="YYYY-MM"
                             style="width: 100%"
@@ -94,7 +94,7 @@
                         </a-form-item>
                       </a-col>
                       <a-col :span="12">
-                        <a-form-item label="退货月份" required>
+                        <a-form-item label="Return month" required>
                           <a-col :span="11">
                             <a-month-picker
                               placeholder="----年~月"
@@ -104,7 +104,7 @@
                               style="width: 100%"
                               :rules="{
                                 required: true,
-                                message: '退货日期不能为空',
+                                message: 'Return date cannot be empty',
                                 trigger: 'blur',
                               }"
                             ></a-month-picker>
@@ -118,7 +118,7 @@
                           <a-col :span="11">
                             <!-- <a-date-picker></a-date-picker> -->
                             <a-month-picker
-                              placeholder="----年~月"
+                              placeholder="----Year~Month"
                               v-model="form.returnDate2"
                               field="returnDate2"
                               format="YYYY-MM"
@@ -135,13 +135,13 @@
                     type="primary"
                     style="width: 140px; height: 40px"
                     @click="getMainContent()"
-                    >查询</a-button
+                    >Search</a-button
                   >
                   <a-button
                     type="primary"
                     style="width: 140px; height: 40px"
                     @click="reSet"
-                    >重置查询</a-button
+                    >Reset</a-button
                   >
                 </div>
               </div>
@@ -151,9 +151,9 @@
                 <div class="contentLeft common common1">
                   <div
                     class="leftTop commontitle"
-                    @click="GotoMainDetail(1, '退货主要原因明细')"
+                    @click="GotoMainDetail(1, 'Detail Reason For Return')"
                   >
-                    <div class="headtitle commonflex">退货主要原因</div>
+                    <div class="headtitle commonflex">Main Reason of Return</div>
                     <div class="common">
                       <dv-border-box-13 class="dv-border-box-12">
                         <dv-scroll-board
@@ -165,7 +165,7 @@
                     </div>
                   </div>
                   <div class="leftMid commontitle">
-                    <div class="headtitle commonflex">退货Catergory占比</div>
+                    <div class="headtitle commonflex">Return Catergory %</div>
                     <div class="common">
                       <dv-border-box-13 class="dv-border-box-12 commonflex">
                         <VCharts
@@ -177,9 +177,9 @@
                   </div>
                   <div
                     class="leftBottom commontitle"
-                    @click="GotoMainDetail(2, '退货ART明细')"
+                    @click="GotoMainDetail(2, 'Return ART Details')"
                   >
-                    <div class="headtitle commonflex">退货前十ART</div>
+                    <div class="headtitle commonflex">Top 10 Returned ART</div>
                     <div class="common">
                       <dv-border-box-13 class="dv-border-box-12 commonflex">
                         <VCharts
@@ -200,7 +200,7 @@
                   </div>
                   <div class="midB">
                     <div class="midL common commontitle">
-                      <div class="headtitle commonflex">厂区退货数量</div>
+                      <div class="headtitle commonflex">Factory Return Quantity</div>
                       <div class="common">
                         <dv-border-box-13 class="dv-border-box-12">
                           <VCharts
@@ -211,7 +211,7 @@
                       </div>
                     </div>
                     <div class="midR common commontitle">
-                      <div class="headtitle commonflex">新旧鞋占比</div>
+                      <div class="headtitle commonflex">Ratio of New and Used Shoes</div>
                       <div class="common">
                         <dv-border-box-13 class="dv-border-box-12 commonflex">
                           <div class="midrL commonflex common">
@@ -235,9 +235,9 @@
                 <div class="contentRight common common1">
                   <div
                     class="rightTop common commontitle"
-                    @click="GotoMainDetail(3, '生产线退货明细')"
+                    @click="GotoMainDetail(3, 'Production Line Return Details')"
                   >
-                    <div class="headtitle commonflex">生产线退货数量</div>
+                    <div class="headtitle commonflex">Production Line Return Quantity</div>
 
                     <div class="common">
                       <dv-border-box-13 class="dv-border-box-12 cmmon1">
@@ -250,9 +250,9 @@
                             "
                             class="tablerow"
                           >
-                            <p>排名</p>
-                            <p>组别</p>
-                            <p>数量和占比</p>
+                            <p>No.</p>
+                            <p>Line</p>
+                            <p>Quantity & Rate</p>
                           </div>
 
                           <dv-scroll-ranking-board
@@ -266,9 +266,9 @@
                   </div>
                   <div
                     class="rightTopMid common commontitle"
-                    @click="GotoMainDetail(4, '鞋型退货明细')"
+                    @click="GotoMainDetail(4, 'Shoe Type Return Details')"
                   >
-                    <div class="headtitle commonflex">鞋型退货数量</div>
+                    <div class="headtitle commonflex">Shoe Type Return Quantity</div>
                     <div class="common">
                       <dv-border-box-13 class="dv-border-box-12">
                         <div>
@@ -280,9 +280,9 @@
                             "
                             class="tablerow"
                           >
-                            <p>排名</p>
-                            <p>鞋型</p>
-                            <p>数量和占比</p>
+                            <p>No.</p>
+                            <p>Shoe Type</p>
+                            <p>Quantity & Rate</p>
                           </div>
                           <dv-scroll-ranking-board
                             :config="shoesTypeConfig"
@@ -295,9 +295,9 @@
                   </div>
                   <div
                     class="rightTopBottom common commontitle"
-                    @click="GotoMainDetail(5, '鞋型退货率')"
+                    @click="GotoMainDetail(5, 'Shoe Type Return Rate')"
                   >
-                    <div class="headtitle commonflex">鞋型退货率</div>
+                    <div class="headtitle commonflex">Shoe Type Return Rate</div>
                     <div class="common">
                       <dv-border-box-13 class="dv-border-box-12">
                         <div>
@@ -309,9 +309,9 @@
                             "
                             class="tablerow"
                           >
-                            <p>排名</p>
-                            <p>鞋型</p>
-                            <p>占比</p>
+                            <p>No.</p>
+                            <p>Shoe Type</p>
+                            <p>Rate</p>
                           </div>
                           <dv-scroll-ranking-board
                             :config="shoesTypepro"
@@ -374,14 +374,14 @@
     const today = new Date();
     return formatDate(new Date(today.getFullYear(), today.getMonth())); // 返回当前月份的第一天
   }
-  const title = ref<string>('中国市场退货分析');
+  const title = ref<string>('Analysis Returns Chinese Market');
   let shoesReturnCount = 0;
 
   const form = ref({
     category: '',
     shoesType: '',
     art: '',
-    noShshoes: '全部',
+    noShshoes: '',
     returnReason: '',
     productDate: '',
     detail_type: '',
@@ -396,8 +396,8 @@
   });
   const pageIndex = ref<boolean>(false);
   const config = reactive({
-    header: ['退货原因', '退货数量'],
-    indexHeader: '序号',
+    header: ['Reason for return', 'Quantity'],
+    indexHeader: 'No.',
     index: true,
     evenRowBGC: '#0A2732',
     oddRowBGC: '#0A2732',
@@ -445,7 +445,7 @@
             show: true,
             position: 'center',
             color: 'white',
-            formatter: '退货数量\n50%',
+            formatter: 'Return quantity\n50%',
           },
           emphasis: {
             show: true,
@@ -541,7 +541,7 @@
 
   const reaturnProOption = reactive<any>({
     title: {
-      text: '年退货数量',
+      text: '% Return year',
       left: 'center',
       textStyle: {
         fontFamily: 'Microsoft YaHei',
@@ -580,10 +580,10 @@
       bottom: 15,
       left: 0,
       data: [
-        '去年退货数量',
-        '今年退货数量',
-        '去年中国区占比',
-        '今年中国区占比',
+        'Return last year',
+        'Return this year',
+        'Last year',
+        'This year',
       ],
     },
     xAxis: [
@@ -748,7 +748,7 @@
     yAxis: [
       {
         type: 'value',
-        name: '单位：双',
+        name: 'Unit: Both',
         nameTextStyle: {
           color: 'white',
         },
@@ -803,11 +803,11 @@
     ],
     series: [
       {
-        name: '去年退货数量',
+        name: 'Return last year',
         type: 'bar',
         tooltip: {
           valueFormatter: (value: any) => {
-            return `${value}双`;
+            return `${value}`;
           },
         },
         data: [],
@@ -816,11 +816,11 @@
         },
       },
       {
-        name: '今年退货数量',
+        name: 'Return this year',
         type: 'bar',
         tooltip: {
           valueFormatter: (value: any): string => {
-            return `${value}双`;
+            return `${value}`;
           },
         },
         data: [12.5, 10, 22, 20, 30, 40, 30, 44, 55, 60, 60, 0],
@@ -829,12 +829,12 @@
         },
       },
       {
-        name: '去年中国区占比',
+        name: 'Last year',
         yAxisIndex: 1,
         type: 'line',
         tooltip: {
           valueFormatter: (value: any): string => {
-            return `${value}双`;
+            return `${value}`;
           },
         },
         data: [],
@@ -846,7 +846,7 @@
         },
       },
       {
-        name: '今年中国区占比',
+        name: 'This year',
         type: 'line',
         tooltip: {
           valueFormatter: (value: any): string => {
@@ -1065,7 +1065,7 @@
       category: '',
       shoesType: '',
       art: '',
-      noShshoes: '全部',
+      noShshoes: 'All',
       returnReason: '',
       productDate: '',
       detail_type: '',
@@ -1186,13 +1186,13 @@
         sortedHeadlist.splice(1, toSort.length, ...toSort);
 
         const totalObj = {
-          title: '合计',
+          title: 'Total',
           dataIndex: 'total',
           width: 100,
           minWidth: 60,
         };
         const indexObg = {
-          title: '序号',
+          title: 'No.',
           dataIndex: '序号',
           width: 60,
           minWidth: 40,
@@ -1314,13 +1314,13 @@
       sortedHeadlist.splice(1, toSort.length, ...toSort);
 
       const totalObj = {
-        title: '合计',
+        title: 'Total',
         dataIndex: 'total',
         width: 100,
         minWidth: 60,
       };
       const indexObg = {
-        title: '序号',
+        title: 'No.',
         dataIndex: '序号',
         width: 60,
         minWidth: 40,
@@ -1398,7 +1398,7 @@
         catetrgorysum += Number(item.VALUE);
         return toLowerCaseKeys(item);
       });
-      returnOption.series[0].label.normal.formatter = `退货数量\n${catetrgorysum}`;
+      returnOption.series[0].label.normal.formatter = `Return quantity\n\n${catetrgorysum}`;
     } else {
       returnOption.series[0].data = [];
     }
@@ -1464,8 +1464,8 @@
      */
     const newoldt = reactive({ ...result.data.newold[0] });
 
-    const newObj = reactive({ value: newoldt.NEWSUM, name: '新鞋' });
-    const oldObj = reactive({ value: newoldt.OLDSUM, name: '旧鞋' });
+    const newObj = reactive({ value: newoldt.NEWSUM, name: 'New' });
+    const oldObj = reactive({ value: newoldt.OLDSUM, name: 'Old' });
     const newold: any[] = [];
     newold.push(oldObj);
     newold.push(newObj);
@@ -1473,10 +1473,10 @@
     if (newoldt.RETURNCOUNT !== 0) {
       newShoeProOption.color = ['#0c2968', '#ff3399'];
       oldShoeProOption.color = ['#ff3399', '#0c2968'];
-      oldShoeProOption.series[0].label.normal.formatter = `旧鞋\n${Math.round(
+      oldShoeProOption.series[0].label.normal.formatter = `New\n${Math.round(
         (newoldt.OLDSUM / (newoldt.OLDSUM + newoldt.NEWSUM)) * 100
       )}%`;
-      newShoeProOption.series[0].label.normal.formatter = `新鞋\n${Math.round(
+      newShoeProOption.series[0].label.normal.formatter = `Old\n${Math.round(
         (newoldt.NEWSUM / (newoldt.OLDSUM + newoldt.NEWSUM)) * 100
       )}%`;
     } else {
@@ -1641,7 +1641,7 @@
   function changepageIndex(padgeindex: any) {
     pageIndex.value = padgeindex;
     fullscreenLoading.value = true;
-    title.value = '中国市场退货分析';
+    title.value = 'Analysis Returns Chinese Market';
   }
 
   function tableRowClassName(row: any, rowIndex: any) {
@@ -1649,28 +1649,6 @@
       return 'warning-row';
     }
     return 'success-row';
-  }
-  function InsertReportLog(param: any) {
-    const data = {
-      DllName: 'SJ_KanBanAPI',
-      ClassName: 'SJ_KanBanAPI.Common',
-      Method: 'InsertReportLog',
-      IP4: '',
-      MAC: 'MAC',
-      IsRasRequst: false,
-      IsRasResult: false,
-      RasResultKey: '',
-      UserToken: localStorage.getItem('token') as string,
-      Data: param,
-    };
-    const base = defaultSettings.api_url.substring(
-      0,
-      defaultSettings.api_url.indexOf('CommonCall')
-    );
-    const apiurl = `${base}Log/InsertLog`;
-    console.log(apiurl);
-    const result = axios.post(apiurl, data);
-    console.log(result);
   }
   onMounted(() => {
     getMainContent();
@@ -1680,7 +1658,6 @@
       report_name: 'chinaReturn',
       type: 'created',
     };
-    InsertReportLog(dic);
   });
   onBeforeUnmount(() => {
     const dic = {
@@ -1688,7 +1665,6 @@
       report_name: 'chinaReturn',
       type: 'destroyed',
     };
-    InsertReportLog(dic);
   });
 </script>
 <style lang="less" scoped>

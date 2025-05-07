@@ -2,8 +2,7 @@
     <div class="contenthead">
         <div class="headLeft common">
             <img src="../../../../../assets/images/back.png" style="width: 40px;" @click="goBack" v-if="!pageIndex" />
-            <button class="gradient-button" @click="gobackMain" v-else>返回</button>
-            <p v-if="!pageIndex" style="font-size: 17px;"> 上次使用时间: {{ lastOpenTime }}</p>
+            <button class="gradient-button" @click="gobackMain" v-else>Return</button>
         </div>
 
         <div class="headMId common">
@@ -33,7 +32,7 @@ const props = defineProps({
     titleMsg: {
         type: String,
         required: false,
-        default: '中国市场退货分析',
+        default: 'Analysis Returns Chinese Market',
     },
     changeColor: {
         type: Function as PropType<() => void>,
@@ -76,16 +75,16 @@ function getTimes() {
     const seconds = formatNumber(now.getSeconds());
     // 星期几的中文表示
     const weekDays = [
-        '星期天',
-        '星期一',
-        '星期二',
-        '星期三',
-        '星期四',
-        '星期五',
-        '星期六',
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
     ];
     const weekDayName = weekDays[weekDay];
-    return `${year}年${month}月${day}日 ${weekDayName} ${hours}:${minutes}:${seconds}`;
+    return `${year}/${month}/${day}  ${weekDayName} ${hours}:${minutes}:${seconds}`;
 }
 
 const changepageIndex=defineEmits(['changepageIndex'])
@@ -121,10 +120,10 @@ const exitFullscreen = () => {
 const toFullOrExit = () => {
     isFull.value = !isFull.value;
     if (isFull.value) {
-        fullText.value = '取消全屏';
+        fullText.value = 'UnFullscreen';
         requestFullScreen();
     } else {
-        fullText.value = '全屏';
+        fullText.value = 'Fullscreen';
         exitFullscreen();
     }
 };
@@ -176,7 +175,7 @@ onMounted(() => {
             display: inline-block;
             text-align: center;
             line-height: 50%;
-            width: 40px;
+            width: 65px;
             height: 33px;
             margin-left: 2px;
             margin-top: 5px;
