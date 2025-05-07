@@ -993,7 +993,7 @@
         return `${value}  ${parseFloat(((value / sum) * 100).toFixed(2))}%`;
       }
 
-      return '数据有误';
+      return 'Data wrong !!!';
     },
   });
   const shoesTypepro = reactive<any>({
@@ -1203,9 +1203,8 @@
         headlist.value = sortedHeadlist;
       } else {
         headlist.value = [];
-        maindetial.map((item: any, index: any) => {
-          item['序号'] = index + 1;
-          item['退货率'] = `${item['退货率']}%`;
+        maindetial.map((item: any, index: number) => {
+          
           return item;
         });
         let headlistdt = [];
@@ -1411,9 +1410,12 @@
     const artY: any[] = [];
     if (artdt.length > 0) {
       artdt.forEach((item: any) => {
-        artX.push(item.ART);
-        artY.push(item.RETURNCOUNT);
+        artX.push(item.ART ?? null);
+        artY.push(item.RETURNCOUNT ?? 0);
       });
+    } else {
+      artX.push(null);
+      artY.push(0);
     }
     reaturnLead.xAxis.data = artX;
     reaturnLead.series[0].data = artY;
@@ -1497,13 +1499,15 @@
     if (shoesReturnsum > 0) {
       let shoestypedt = {};
       shoestypedt = result.data.shoesType.map((item: any) => ({
-        name: item.SHOSE_NAME,
-        value: item.RETURNCOUNT,
+        name: item.SHOSE_NAME ?? null,
+        value: item.RETURNCOUNT ?? 0,
       }));
 
       shoesTypeConfig.data = shoestypedt;
     } else {
-      shoesTypeConfig.data = [];
+      shoesTypeConfig.data = [
+        { name: null, value: 0 },
+      ];
     }
     /*
      *生产线退货数量
@@ -1671,6 +1675,7 @@
   .full {
     background-image: linear-gradient(to top, #000e1c, #083a52);
     background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
   .container {
