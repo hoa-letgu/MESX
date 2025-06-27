@@ -13,7 +13,7 @@
   "tabBar": true,
   "menuFromServer": true,
   "pic_url": "http://10.30.3.50:8083",
-  "api_url": "http://localhost:60626/api/CommonCall",
+  "api_url": "http://10.30.3.50:8025//api/CommonCall",
   "serverMenu": [],
   "CompanyCode": "aphmes-800",
   "CompanyName": "aphmes-800"
